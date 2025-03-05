@@ -1,4 +1,4 @@
-defmodule WanakaRetailServiceWeb.AuthJSON do
+defmodule WanakaRetailServiceWeb.ProfileJSON do
   ##use WanakaRetailServiceWeb, :view
 
   def render("ok.json", %{body: result}) do

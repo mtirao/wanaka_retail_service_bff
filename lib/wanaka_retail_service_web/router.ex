@@ -1,4 +1,5 @@
 defmodule WanakaRetailServiceWeb.Router do
+
   use WanakaRetailServiceWeb, :router
 
   pipeline :browser do
@@ -14,9 +15,14 @@ defmodule WanakaRetailServiceWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", WanakaRetailServiceWeb do
+  scope "/api/wanaka/accounts", WanakaRetailServiceWeb do
     pipe_through :api
     get "/login", AuthController, :login
+  end
+
+  scope "/api/wanaka/profile", WanakaRetailServiceWeb do
+    pipe_through :api
+    get "/:user_id", ProfileController, :profile
   end
 
 
